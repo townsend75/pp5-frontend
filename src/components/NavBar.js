@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from "../assets/ArtXChangeLogo.png";
 import styles from "../styles/NavBar.module.css";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -29,14 +29,14 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/signin"
             >
-              <i className="fas fa-sign-in-alt"></i>Sign In
+              <i className="fas fa-sign-in-alt"></i>Sign in
             </NavLink>
             <NavLink
+              to="/signup"
               className={styles.NavLink}
               activeClassName={styles.Active}
-              to="/signup"
             >
-              <i className="fas fa-user-plus"></i>Sign Up
+              <i className="fas fa-user-plus"></i>Sign up
             </NavLink>
           </Nav>
         </Navbar.Collapse>
