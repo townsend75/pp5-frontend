@@ -59,10 +59,11 @@ function PostCreateForm() {
     // formData.append("genre", genre);
 
     try {
-      const { data } = await axiosReq.post("/posts", formData);
+      const { data } = await axiosReq.post("/posts/", formData);
       history.push(`/posts/${data.id}`);
     } catch (err) {
       console.log(err);
+      console.log(err.response);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
