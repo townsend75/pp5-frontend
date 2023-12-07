@@ -24,10 +24,10 @@ function PostCreateForm() {
   const [postData, setPostData] = useState({
     title: "",
     content: "",
-    // genre: "",
+    genre: "",
     image: "",
   });
-  const { title, content, image } = postData;
+  const { title, content, genre, image } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -56,7 +56,7 @@ function PostCreateForm() {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
-    // formData.append("genre", genre);
+    formData.append("genre", genre);
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
@@ -101,11 +101,11 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
-      {/* <Form.Group>
+      <Form.Group>
         <Form.Label>Genre</Form.Label>
         <Form.Control
           as="textarea"
-          rows={3}
+          rows={2}
           name="genre"
           value={genre}
           onChange={handleChange}
@@ -115,7 +115,7 @@ function PostCreateForm() {
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
-      ))} */}
+      ))}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
