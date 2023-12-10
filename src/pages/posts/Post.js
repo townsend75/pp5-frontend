@@ -2,10 +2,12 @@ import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
+import btnStyles from "../../styles/Button.module.css";
 
 const Post = (props) => {
   const {
@@ -22,6 +24,7 @@ const Post = (props) => {
     updated_at,
     postPage,
     setPosts,
+    average_rating,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -127,6 +130,21 @@ const Post = (props) => {
             <i className="far fa-comments" />
           </Link>
           {comments_count}
+
+          <Link to={`/posts/${average_rating}`}>
+            <i class="far fa-star" />
+          </Link>
+
+          {average_rating}
+           
+          <Button
+            className={btnStyles.Button}
+            onClick={() => history.push(`/reviews/${id}/create`)}
+            aria-label="create-review"
+          >
+            Leave a star rating
+          </Button>
+          
         </div>
       </Card.Body>
     </Card>
