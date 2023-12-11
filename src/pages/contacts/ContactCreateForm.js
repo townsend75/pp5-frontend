@@ -29,14 +29,16 @@ function ContactCreateForm() {
 
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   const handleChange = (event) => {
     setContactData({
       ...contactData,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const handleClose = () => {
+    setShow(false);
+    history.goBack();
   };
 
   const handleSubmit = async (event) => {
@@ -49,8 +51,6 @@ function ContactCreateForm() {
 
     try {
       await axiosReq.post("/contacts/", formData);
-      handleShow();
-      
     } catch (err) {
       // console.log(err);
       if (err.response?.status !== 401) {

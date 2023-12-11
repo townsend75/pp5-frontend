@@ -23,7 +23,7 @@ const ReviewCreateForm = () => {
 
   const history = useHistory();
 
-  const [rating, setRating] = useState(0); // initial rating value
+  const [rating, setRating] = useState(5); // initial rating value
 
   // CatchRating value
   //const handleRating = (rate) => {
@@ -57,13 +57,12 @@ const ReviewCreateForm = () => {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Rating</Form.Label>
+        <Form.Label>Rating- leave a rating between 1 and 5</Form.Label>
         <Form.Control
           type="text"
           name="rating"
           value={rating}
           onChange={handleChange}
-          placeholder="Leave a rating between 1 and 5"
         />
       </Form.Group>
       {errors?.rating?.map((message, idx) => (

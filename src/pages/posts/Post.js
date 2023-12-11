@@ -131,9 +131,9 @@ const Post = (props) => {
           </Link>
           {comments_count}
 
-          <Link to={`/posts/${average_rating}`}>
+          
             <i class="far fa-star" />
-          </Link>
+        
 
           {average_rating}
            
