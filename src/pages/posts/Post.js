@@ -80,7 +80,7 @@ const Post = (props) => {
     <Card className={styles.Post}>
       <Card.Body>
         <Media className="align-items-center justify-content-between">
-          <Link to={`/profiles/${profile_id}`}>
+          <Link to={`/profiles/${profile_id}`} aria-label="Link to profile">
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
@@ -95,7 +95,7 @@ const Post = (props) => {
           </div>
         </Media>
       </Card.Body>
-      <Link to={`/posts/${id}`}>
+      <Link to={`/posts/${id}`} aria-label="Link to post">
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
@@ -126,25 +126,22 @@ const Post = (props) => {
             </OverlayTrigger>
           )}
           {likes_count}
-          <Link to={`/posts/${id}`}>
+          <Link to={`/posts/${id}`} aria-label="Link to post">
             <i className="far fa-comments" />
           </Link>
           {comments_count}
 
-          
-            <i class="far fa-star" />
-        
+          <i className="far fa-star" />
 
           {average_rating}
-           
+
           <Button
             className={btnStyles.Button}
             onClick={() => history.push(`/reviews/${id}/create`)}
-            aria-label="create-review"
+            aria-label="leave star rating"
           >
             Leave a star rating
           </Button>
-          
         </div>
       </Card.Body>
     </Card>

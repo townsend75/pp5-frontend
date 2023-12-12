@@ -25,10 +25,6 @@ const ReviewCreateForm = () => {
 
   const [rating, setRating] = useState(5); // initial rating value
 
-  // CatchRating value
-  //const handleRating = (rate) => {
-  // setRating(rate / 20);
-
   const handleChange = (event) => {
     setReviewData({
       ...reviewData,

@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import Profile from "./Profile";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 
-
 const PopularProfiles = ({ mobile }) => {
-  const {popularProfiles} = useProfileData();
+  const { popularProfiles } = useProfileData();
   return (
     <Container
       className={`${appStyles.ProfileContent} ${
@@ -15,10 +14,10 @@ const PopularProfiles = ({ mobile }) => {
       }`}
     >
       {popularProfiles.results ? (
-        <> 
+        <>
           {mobile ? (
             <div className="d-flex justify-content-around">
-              {popularProfiles.results.slice(0, 8).map((profile) => (
+              {popularProfiles.results.slice(0, 4).map((profile) => (
                 <Profile key={profile.id} profile={profile} mobile />
               ))}
             </div>

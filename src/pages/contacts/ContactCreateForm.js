@@ -49,9 +49,8 @@ function ContactCreateForm() {
 
     try {
       await axiosReq.post("/contacts/", formData);
-      
       handleShow();
-      history.goBack();
+      // history.goBack();
     } catch (err) {
       // console.log(err);
       if (err.response?.status !== 401) {
@@ -114,7 +113,11 @@ function ContactCreateForm() {
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        type="submit"
+        onClick={handleShow}
+      >
         Send
       </Button>
     </div>
@@ -131,10 +134,7 @@ function ContactCreateForm() {
         </Modal.Header>
         <Modal.Body>Thanks for your feedback.</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cancel
-          </Button>
-          <Button className={btnStyles.Button} onClick={handleClose}>
+          <Button className={btnStyles.Button} onClick={() => history.goBack()}>
             Confirm
           </Button>
         </Modal.Footer>

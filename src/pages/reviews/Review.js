@@ -4,33 +4,19 @@ import { Link } from "react-router-dom";
 import styles from "../../styles/Review.module.css";
 
 const Review = (props) => {
-  const {
-    id,
-    profile_id,
-    profile_image,
-    owner,
-    updated_at,
-    content,
-    rating,
-
-  } = props;
+  const { id, owner, updated_at, rating } = props;
 
   return (
     <>
       <hr />
       <Media>
-        <Link to={`/posts/${id}`}>
-        </Link>
+        <Link to={`/posts/${id}`} aria-label="Link to post"></Link>
         <Media.Body className="align-self-center ml-2">
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
           <p>
             Rating:
-           
-          </p>
-          <p>
-            Review:
-            {content}
+            {rating}
           </p>
         </Media.Body>
       </Media>
