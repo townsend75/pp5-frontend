@@ -51,8 +51,8 @@
 | Test | Description                                                      | Steps                        | Expected                      | Pass/Fail |
 | ---- | ---------------------------------------------------------------- | ---------------------------- | ----------------------------- | --------- |
 | C001 | User can access contact form via the icon on the navigation menu | Click on the contact us icon | The contact form is displayed | Pass      |
-| C002 | User can submit form  | Submit the contact form containing all relevant data   |  Form is submitted, a modal appears confirming the form has been sent and the user is redirected to the previous page |           |
-|      |                                                                  |                              |                               |           |
+| C002 | User can submit form  | Submit the contact form containing all relevant data   |  Form is submitted, a modal appears confirming the form has been sent and the user is redirected to the previous page | Pass          |
+
 
 ## Unit Tests
 
